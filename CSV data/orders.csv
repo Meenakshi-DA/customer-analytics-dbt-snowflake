@@ -1,0 +1,11 @@
+order_id;customer_id;order_date;order_amount;product_category;;
+O1001;C001;2023-05-01;120.50;Electronics;;
+O1002;C002;2023-05-03;85.00;Clothing;;
+O1003;C001;2023-05-10;45.75;Books;;
+O1004;C003;2023-05-15;230.00;Electronics;;
+O1005;C004;2023-05-20;99.99;Home;;
+O1006;C005;2023-05-25;150.00;Electronics;;
+O1007;C002;2023-06-01;60.00;Books;;
+O1008;C006;2023-06-05;300.00;Electronics;;
+O1009;C003;2023-06-10;75.50;Clothing;;
+O1010;C005;2023-06-15;200.00;Home;;

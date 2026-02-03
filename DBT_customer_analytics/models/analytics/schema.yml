@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: customers_dim
+    description: "Dimension table containing unique customers."
+    columns:
+      - name: customer_id
+        description: "Unique ID of the customer."
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: "Name of the customer."
+      - name: email
+        description: "Email address of the customer."
+
+  - name: orders_fact
+    description: "Fact table containing all orders placed by customers."
+    columns:
+      - name: order_id
+        description: "Unique ID of the order."
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Customer who placed the order."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('customers_dim')
+                field: customer_id
+      - name: amount
+        description: "Total amount of the order."
+        tests:
+          - not_null
+      - name: order_date
+        description: "Date when the order was placed."
+        tests:
+          - not_null
+
+  - name: customer_metrics
+    description: "Customer-level aggregated KPIs such as total orders and total revenue, used to analyze customer value and purchasing behavior."
+    columns:
+      - name: customer_id
+        description: "Unique ID of the customer."
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('customers_dim')
+                field: customer_id
+      - name: total_orders
+        description: "Total number of orders placed by the customer."
+        tests:
+          - not_null
+      - name: total_revenue
+        description: "Total amount spent by the customer."
+        tests:
+          - not_null

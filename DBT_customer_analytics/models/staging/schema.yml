@@ -1,0 +1,42 @@
+version: 2
+
+# Define sources for raw tables
+sources:
+  - name: raw
+    database: analytics_db
+    schema: raw
+    tables:
+      - name: customers
+      - name: orders
+
+# Staging models
+models:
+  - name: stg_customers
+    description: "Staging table for raw customers data."
+    columns:
+      - name: customer_id
+        description: "Customer unique identifier from raw data."
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: "Customer name from raw data."
+      - name: email
+        description: "Customer email from raw data."
+
+  - name: stg_orders
+    description: "Staging table for raw orders data."
+    columns:
+      - name: order_id
+        description: "Order unique identifier from raw data."
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Customer identifier from raw data."
+        tests:
+          - not_null
+      - name: amount
+        description: "Order amount from raw data."
+      - name: order_date
+        description: "Order date from raw data."
