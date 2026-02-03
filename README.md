@@ -67,7 +67,7 @@ An interactive dashboard built on Snowflake analytics tables including:
 - Customer Value Segmentation
 
 📸 *Dashboard screenshots included in the repository*
-[![Dashboard Screenshots]](Images/Tableau)
+[Dashboard Screenshots](Images/Tableau)
 
 ---
 
