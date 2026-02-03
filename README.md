@@ -43,7 +43,7 @@ Data is loaded into Snowflake using stages and COPY commands.
 - dbt documentation & lineage graph
 
 📸 *Lineage graph screenshot available in the repository*
-(Images/DBT/02_dbt_lineage_customer_metrics.png)
+[![Lineage Graph](Images/DBT/02_dbt_lineage_customer_metrics.png)](Images/DBT/02_dbt_lineage_customer_metrics.png)
 
 ---
 
